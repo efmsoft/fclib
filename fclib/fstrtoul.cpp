@@ -32,7 +32,7 @@ static int __CheckBase(LPCSTR FAR* str, int Base)
                                             // caused by optimization
 unsigned long  FAR __cdecl _fstrtoul(LPCSTR str, LPSTR FAR* endptr, int base)
 {
-  DWORD   dwValue = 0;                      // Result placeholder
+  unsigned long dwValue = 0;                // Result placeholder
 
   if (str != NULL)
   {
@@ -51,7 +51,7 @@ unsigned long  FAR __cdecl _fstrtoul(LPCSTR str, LPSTR FAR* endptr, int base)
     {
       while (*str)
       {
-        DWORD d = dwValue;                  // Overflow may occurs
+        unsigned long d = dwValue;          // Overflow may occurs
 
         if (_fisdigit(*str))
           dwValue = dwValue * base + (*str - '0');

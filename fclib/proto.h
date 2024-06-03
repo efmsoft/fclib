@@ -1,10 +1,15 @@
 #pragma once
 
 #include <limits.h>
+#include <stddef.h>
 #include <stdint.h>
 
 #ifndef FAR
 #define FAR
+#endif
+
+#ifndef _WIN32
+#define __cdecl
 #endif
 
 typedef uint8_t BYTE;

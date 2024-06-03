@@ -38,5 +38,5 @@ LPBYTE FindCodeByTemplate(LPBYTE p1, UINT len1, WORD* p2, UINT len2)
         return &lpPos[i];
     }
   }
-  return NULL;
+  return nullptr;
 }
