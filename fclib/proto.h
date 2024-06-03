@@ -31,7 +31,7 @@ typedef void FAR* FPTR;
 #if !defined(_UNICODE) && !defined(UNICODE)
 #ifndef _ftcslen
 #define _ftcslen _fstrlen
-#endif                                      // #ifndef _ftcslen
+#endif // #ifndef _ftcslen
 
 typedef char TCHAR;
 #else
@@ -51,9 +51,9 @@ typedef const TCHAR* LPCTSTR;
 
 extern "C"
 {
-char FAR* FAR __cdecl _fstrncpy(char   FAR* str1, const char   FAR* str2, size_t nCount);
+char FAR* FAR __cdecl _fstrncpy(char FAR* str1, const char FAR* str2, size_t nCount);
 char FAR* FAR __cdecl _fstrpbrk(const char FAR* lpszString, const char FAR* lpszCharSet);
-FPTR FAR  __cdecl _fmemmove(FPTR dest, const void   FAR* src, size_t count);
+FPTR FAR __cdecl _fmemmove(FPTR dest, const void FAR* src, size_t count);
 int FAR __cdecl _fisdigit(int c);
 int FAR __cdecl _fmemcmp(const void FAR* fpBuf1, const void FAR* fpBuf2, size_t iCount);
 int FAR __cdecl _fstrcmp(LPCSTR lpszStr1, LPCSTR lpszStr2);
@@ -77,19 +77,19 @@ LPSTR FAR __cdecl _fstrset(LPSTR lpszString, int c);
 LPSTR FAR __cdecl _fstrstr(LPCSTR s1, LPCSTR s2);
 LPSTR FAR __cdecl _fstrtok(LPSTR str, LPCSTR sep);
 LPSTR FAR __cdecl _fstrupr(LPSTR st);
-size_t FAR  __cdecl _fstrlen(LPCSTR lpsz);
+size_t FAR __cdecl _fstrlen(LPCSTR lpsz);
 size_t FAR __cdecl _fstrcspn(const char FAR* str1, const char FAR* str2);
 size_t FAR __cdecl _fstrlen(LPCSTR lpsz);
 unsigned long FAR __cdecl _fstrtoul(LPCSTR str, LPSTR FAR* endptr, int base);
 void FAR* FAR __cdecl _fmemcpy(void FAR* fpDest, const void FAR* fpSrc, size_t iCount);
 void FAR* FAR __cdecl _fmemset(void FAR* fpDest, int c, size_t iCount);
 
-long FAR __cdecl _fatoxn(const char   FAR* pString, int nLen);
-long FAR __cdecl _fatox(const char   FAR* pString);
-long FAR __cdecl _fatoln(const char   FAR* pString, int nLen);
-long FAR __cdecl _fatol(const char   FAR* pString);
-int FAR __cdecl _fatoin(const char   FAR* pString, int nLen);
-int FAR __cdecl  _fatoi(const char   FAR* pString);
+long FAR __cdecl _fatoxn(const char FAR* pString, int nLen);
+long FAR __cdecl _fatox(const char FAR* pString);
+long FAR __cdecl _fatoln(const char FAR* pString, int nLen);
+long FAR __cdecl _fatol(const char FAR* pString);
+int FAR __cdecl _fatoin(const char FAR* pString, int nLen);
+int FAR __cdecl _fatoi(const char FAR* pString);
 
 LPCSTR FAR __cdecl EatWhiteBegin(LPCSTR p);
 void FAR __cdecl EatWhiteEnd(LPCSTR p);
