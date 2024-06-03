@@ -1,6 +1,8 @@
 #include <fclib/proto.h>
 #include <gtest/gtest.h>
 
+#include <cstring>
+
 TEST(fclib, _fstrncpy)
 {
   // No null-character is implicitly appended at the end of destination 
@@ -37,6 +39,44 @@ TEST(fclib, _fstrpbrk)
     EXPECT_EQ(*pch, rc[i]);
     pch = _fstrpbrk(pch + 1, key);
   }
+}
+
+TEST(fclib, _fmemmove)
+{
+  char str1[9] = "aabbccdd";
+  _fmemmove(str1 + 2, str1, 6);
+  EXPECT_EQ(_fstrcmp(str1, "aaaabbcc"), 0);
+}
+
+TEST(fclib, _fisdigit)
+{
+  EXPECT_EQ(_fisdigit('0'), true);
+  EXPECT_EQ(_fisdigit('1'), true);
+  EXPECT_EQ(_fisdigit('2'), true);
+  EXPECT_EQ(_fisdigit('3'), true);
+  EXPECT_EQ(_fisdigit('4'), true);
+  EXPECT_EQ(_fisdigit('5'), true);
+  EXPECT_EQ(_fisdigit('6'), true);
+  EXPECT_EQ(_fisdigit('7'), true);
+  EXPECT_EQ(_fisdigit('8'), true);
+  EXPECT_EQ(_fisdigit('9'), true);
+
+  EXPECT_EQ(_fisdigit('a'), false);
+  EXPECT_EQ(_fisdigit('Z'), false);
+}
+
+TEST(fclib, _fmemcmp)
+{
+  EXPECT_NE(_fmemcmp("abcdef", "abcdEf", 6), 0);
+  EXPECT_EQ(_fmemcmp("abcdef", "abcdEf", 4), 0);
+  EXPECT_EQ(_fmemcmp("abcdef", "abcdEf", 0), memcmp("abcdef", "abcdEf", 0));
+}
+
+TEST(fclib, _fmemmcpy)
+{
+  char str1[9] = "aabbccdd";
+  _fmemcpy(str1 + 2, str1, 6);
+  EXPECT_EQ(_fstrcmp(str1, "aaaabbbb"), 0);
 }
 
 TEST(fclib, _fstrcmp)
