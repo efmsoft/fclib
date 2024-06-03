@@ -3,13 +3,13 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
-static BOOLAWD __IsCharSeparator(char c, LPCSTR sep)
+static bool __IsCharSeparator(char c, LPCSTR sep)
 {
   while (*sep)
   {
-    if (*sep++ == c) return BOOL_TRUE;
+    if (*sep++ == c) return true;
   }
-  return BOOL_FALSE;
+  return false;
 }
 
 LPSTR FAR __cdecl _fstrtok(LPSTR str, LPCSTR sep)

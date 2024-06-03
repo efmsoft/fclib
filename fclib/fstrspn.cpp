@@ -16,7 +16,7 @@ size_t FAR __cdecl _fstrcspn(const char FAR* str1, const char FAR* str2)
 
 size_t FAR __cdecl _fstrspn(const char FAR* str1, const char FAR* str2)
 {
-  char far* str = (char far*) str1;
+  char FAR* str = (char FAR*) str1;
 
   while (*str)
   {

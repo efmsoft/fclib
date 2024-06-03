@@ -1,17 +1,47 @@
 #pragma once
 
-#include <windows.h>
+#include <limits.h>
+#include <stdint.h>
+
+#ifndef FAR
+#define FAR
+#endif
+
+typedef uint8_t BYTE;
+typedef uint16_t WORD;
+
+#ifndef _WINDOWS_
+typedef uint32_t DWORD;
+#endif
+
+typedef long LONG;
+typedef unsigned int UINT;
+
+typedef char* LPSTR;
+typedef const char* LPCSTR;
+typedef BYTE* LPBYTE;
 
 typedef void FAR* FPTR;
-typedef bool BOOLAWD;
 
-constexpr static bool BOOL_TRUE = true;
-constexpr static bool BOOL_FALSE = false;
-
-#ifndef _UNICODE
+#if !defined(_UNICODE) && !defined(UNICODE)
 #ifndef _ftcslen
 #define _ftcslen _fstrlen
 #endif                                      // #ifndef _ftcslen
+
+typedef char TCHAR;
+#else
+typedef wchar_t TCHAR;
+#endif
+
+typedef TCHAR* LPTSTR;
+typedef const TCHAR* LPCTSTR;
+
+#ifndef LOBYTE
+#define LOBYTE(w) (BYTE)((w) & 0xFF)
+#endif
+
+#ifndef HIBYTE
+#define HIBYTE(w) LOBYTE((WORD)(w) >> 8)
 #endif
 
 extern "C"
