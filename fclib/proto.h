@@ -78,6 +78,7 @@ LPSTR FAR __cdecl _fstrstr(LPCSTR s1, LPCSTR s2);
 LPSTR FAR __cdecl _fstrtok(LPSTR str, LPCSTR sep);
 LPSTR FAR __cdecl _fstrupr(LPSTR st);
 size_t FAR __cdecl _fstrlen(LPCSTR lpsz);
+size_t FAR __cdecl _fwcslen(const wchar_t* lpsz);
 size_t FAR __cdecl _fstrcspn(const char FAR* str1, const char FAR* str2);
 size_t FAR __cdecl _fstrlen(LPCSTR lpsz);
 unsigned long FAR __cdecl _fstrtoul(LPCSTR str, LPSTR FAR* endptr, int base);

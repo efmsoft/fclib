@@ -3,7 +3,7 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
-size_t FAR __cdecl _fstrlen(LPCSTR lpsz)
+size_t FAR __cdecl _fwcslen(const wchar_t* lpsz)
 {
   size_t iRet = 0;
 
