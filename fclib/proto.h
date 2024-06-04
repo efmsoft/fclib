@@ -53,6 +53,7 @@ extern "C"
 {
 char FAR* FAR __cdecl _fstrncpy(char FAR* str1, const char FAR* str2, size_t nCount);
 char FAR* FAR __cdecl _fstrpbrk(const char FAR* lpszString, const char FAR* lpszCharSet);
+const wchar_t* FAR __cdecl _fwcsstr(const wchar_t* s1, const wchar_t* s2);
 FPTR FAR __cdecl _fmemmove(FPTR dest, const void FAR* src, size_t count);
 int FAR __cdecl _fisdigit(int c);
 int FAR __cdecl _fmemcmp(const void FAR* fpBuf1, const void FAR* fpBuf2, size_t iCount);
@@ -77,10 +78,10 @@ LPSTR FAR __cdecl _fstrset(LPSTR lpszString, int c);
 LPSTR FAR __cdecl _fstrstr(LPCSTR s1, LPCSTR s2);
 LPSTR FAR __cdecl _fstrtok(LPSTR str, LPCSTR sep);
 LPSTR FAR __cdecl _fstrupr(LPSTR st);
-size_t FAR __cdecl _fstrlen(LPCSTR lpsz);
-size_t FAR __cdecl _fwcslen(const wchar_t* lpsz);
 size_t FAR __cdecl _fstrcspn(const char FAR* str1, const char FAR* str2);
 size_t FAR __cdecl _fstrlen(LPCSTR lpsz);
+size_t FAR __cdecl _fstrlen(LPCSTR lpsz);
+size_t FAR __cdecl _fwcslen(const wchar_t* lpsz);
 unsigned long FAR __cdecl _fstrtoul(LPCSTR str, LPSTR FAR* endptr, int base);
 void FAR* FAR __cdecl _fmemcpy(void FAR* fpDest, const void FAR* fpSrc, size_t iCount);
 void FAR* FAR __cdecl _fmemset(void FAR* fpDest, int c, size_t iCount);
