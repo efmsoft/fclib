@@ -5,7 +5,7 @@
 ;-----------------------------------------------------------------------------
                 .386
 _TEXT           segment use32 para public 'CODE'
-                public  __alldiv
+                public  __falldiv
 
 LOWORD  equ     [0]
 HIWORD  equ     [4]
@@ -30,7 +30,7 @@ HIWORD  equ     [4]
 ;       ECX
 ;
 
-__alldiv        proc    near
+__falldiv       proc    near
                 assume  cs:_TEXT
 
         push    edi
@@ -187,7 +187,7 @@ L8:
 
         ret     16
 
-__alldiv        endp
+__falldiv       endp
 
 _TEXT           ends
                 end

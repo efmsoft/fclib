@@ -5,7 +5,7 @@
 ;-----------------------------------------------------------------------------
                 .386
 _TEXT           segment use32 para public 'CODE'
-                public  __allmul
+                public  __fallmul
 
 LOWORD  equ     [0]
 HIWORD  equ     [4]
@@ -30,7 +30,7 @@ HIWORD  equ     [4]
 ;       ECX
 ;
 
-__allmul        proc    near
+__fallmul       proc    near
                 assume  cs:_TEXT
 
 A       EQU     [esp + 4]       ; stack address of a
@@ -80,7 +80,7 @@ B2      EQU     [esp + 16]      ; stack address of b
 
         ret     16              ; callee restores the stack
 
-__allmul        endp
+__fallmul       endp
 
 _TEXT           ends
                 end

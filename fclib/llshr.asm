@@ -5,7 +5,7 @@
 ;-----------------------------------------------------------------------------
                 .386
 _TEXT           segment use32 para public 'CODE'
-                public  __allshr
+                public  __fallshr
 
 ;
 ; llshr - long shift right
@@ -25,7 +25,7 @@ _TEXT           segment use32 para public 'CODE'
 ;       CL is destroyed.
 ;
 
-__allshr        proc    near
+__fallshr       proc    near
                 assume  cs:_TEXT
 
 ;
@@ -62,7 +62,7 @@ RETSIGN:
         mov     eax,edx
         ret
 
-__allshr        endp
+__fallshr       endp
 
 _TEXT           ends
                 end

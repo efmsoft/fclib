@@ -5,7 +5,7 @@
 ;-----------------------------------------------------------------------------
                 .386
 _TEXT           segment use32 para public 'CODE'
-                public  __alldvrm
+                public  __falldvrm
 
 LOWORD  equ     [0]
 HIWORD  equ     [4]
@@ -31,7 +31,7 @@ HIWORD  equ     [4]
 ;       ECX
 ;
 
-__alldvrm       proc    near
+__falldvrm      proc    near
                 assume  cs:_TEXT
 
         push    edi
@@ -233,7 +233,7 @@ L8:
 
         ret     16
 
-__alldvrm       endp
+__falldvrm      endp
 
 _TEXT           ends
                 end
