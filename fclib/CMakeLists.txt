@@ -18,6 +18,8 @@ if(CMAKE_CXX_FLAGS MATCHES "/EHsc")
   string(REPLACE "/EHsc" "" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
 endif() 
 
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /GS-")
+
 add_library(${PROJECT_NAME} STATIC ${SOURCES} ${ASOURCES} ${HEADERS}) 
 
 target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})

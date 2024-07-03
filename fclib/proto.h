@@ -86,6 +86,11 @@ unsigned long FAR __cdecl _fstrtoul(LPCSTR str, LPSTR FAR* endptr, int base);
 void FAR* FAR __cdecl _fmemcpy(void FAR* fpDest, const void FAR* fpSrc, size_t iCount);
 void FAR* FAR __cdecl _fmemset(void FAR* fpDest, int c, size_t iCount);
 
+int _fvsprintf(char* buffer, const char* format, va_list va);
+int _fvsnprintf(char* buffer, size_t count, const char* format, va_list va);
+int _fsnprintf(char* buffer, size_t count, const char* format, ...);
+int _fsprintf(char* buffer, const char* format, ...);
+
 long FAR __cdecl _fatoxn(const char FAR* pString, int nLen);
 long FAR __cdecl _fatox(const char FAR* pString);
 long FAR __cdecl _fatoln(const char FAR* pString, int nLen);
