@@ -1,7 +1,7 @@
 #include <proto.h>
 
 #if   defined(_WINNTD)
-#define IsAddressValid(p)      (IsBadReadPtr((PVOID)p) == BOOL_FALSE)
+#define IsAddressValid(p)      (IsBadReadPtr((PVOID)p) == false)
 #elif defined(_WIN4)
 #define IsAddressValid(p)      (DWORD(p) > 0xC0000000)
 #else
