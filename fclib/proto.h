@@ -82,6 +82,7 @@ size_t FAR __cdecl _fstrcspn(const char FAR* str1, const char FAR* str2);
 size_t FAR __cdecl _fstrlen(LPCSTR lpsz);
 size_t FAR __cdecl _fstrlen(LPCSTR lpsz);
 size_t FAR __cdecl _fwcslen(const wchar_t* lpsz);
+int FAR __cdecl _fwcsicmp(const wchar_t *string1, const wchar_t *string2);
 unsigned long FAR __cdecl _fstrtoul(LPCSTR str, LPSTR FAR* endptr, int base);
 void FAR* FAR __cdecl _fmemcpy(void FAR* fpDest, const void FAR* fpSrc, size_t iCount);
 void FAR* FAR __cdecl _fmemset(void FAR* fpDest, int c, size_t iCount);
